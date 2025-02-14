@@ -6,8 +6,8 @@
     "build": "tsc",
     "prestart": "npm run build",
     "start": "node dist/test/text-test-fixture.js",
-    "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "test": "jest"
   },
   "license": "MIT",
   "private": true,
