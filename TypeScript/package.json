@@ -9,8 +9,7 @@
     "lint": "pnpm lint:scripts --fix && pnpm lint:prettier",
     "preinstall": "npx only-allow pnpm",
     "prepare": "cd .. && husky install TypeScript/.husky",
-    "prestart": "npm run build",
-    "start": "node dist/test/text-test-fixture.js",
+    "start": "tsx test/text-test-fixture.ts",
     "test:coverage": "pnpm test run --coverage",
     "test": "vitest"
   },
@@ -30,6 +29,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
     "prettier": "3.5.1",
+    "tsx": "^4.19.2",
     "typescript": "^4.9.4",
     "typescript-eslint": "^8.24.0",
     "vitest": "^3.0.5"
