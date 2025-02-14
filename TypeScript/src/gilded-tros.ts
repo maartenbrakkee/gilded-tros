@@ -58,9 +58,10 @@ export class GildedTros {
   }
 
   /**
-   * Updates the quality of all items in the inventory.
+   * Updates the quality and number of days left before the item should be sold of all items in the inventory.
+   * @private
    */
-  public updateQuality(): void {
+  private updateInventory(): void {
     for (const item of this.items) {
       // B-DAWG Keychain never has to be sold or decreases in quality: do nothing
       if (item.name === "B-DAWG Keychain") continue;
@@ -85,6 +86,33 @@ export class GildedTros {
       if (item.quality < 0) {
         item.quality = 0;
       }
+
+      // end of day: lower days left before the item should be sold
+      item.sellIn--;
     }
+  }
+
+  /**
+   * Prints the inventory for a given day.
+   * @private
+   * @param {Item[]} items - The array of items in the inventory.
+   * @param {number} day - The current day.
+   */
+  private printDay(items: Item[], day: number) {
+    console.log(`-------- day ${day} --------`);
+    console.table(this.items);
+  }
+
+  /**
+   * Shows the inventory over a specified number of days, optionally printing the inventory each day.
+   * @param {number} days - The number of days to simulate.
+   * @param {boolean} [outputEveryDay=true] - Whether to print the inventory each day.
+   */
+  public showInventory(days: number, outputEveryDay: boolean = true) {
+    for (let i = 0; i < days; i++) {
+      if (outputEveryDay) this.printDay(this.items, i);
+      this.updateInventory();
+    }
+    this.printDay(this.items, days);
   }
 }
