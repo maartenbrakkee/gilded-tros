@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "preinstall": "npx only-allow pnpm",
     "prestart": "npm run build",
     "start": "node dist/test/text-test-fixture.js",
     "test:watch": "jest --watchAll",
