@@ -1,5 +1,5 @@
-import { GildedTros } from "../src/gilded-tros";
-import { Item } from "../src/item";
+import { GildedTros } from "@/GildedTros";
+import { Item } from "@/item";
 
 console.log("AXXES CODE KATA - GILDED TROS");
 
@@ -18,12 +18,12 @@ const items: Item[] = [
   new Item("Ugly Variable Names", 3, 6),
 ];
 
-const app: GildedTros = new GildedTros(items);
+const gildedTros = new GildedTros(items);
 
 let days = 4;
 const args = process.argv.slice(2);
 if (args.length > 0) {
-  days = +args[0] + 1;
+  days = +args[0];
 }
 
-app.showInventory(days);
+gildedTros.showInventory(days);
