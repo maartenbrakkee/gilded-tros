@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "lint:prettier": "prettier . --write",
+    "lint:prettier": "prettier --ignore-path .prettierignore --ignore-path ../.gitignore . --write",
     "lint:scripts": "eslint .",
     "lint": "pnpm lint:scripts --fix && pnpm lint:prettier",
     "preinstall": "npx only-allow pnpm",
