@@ -8,7 +8,7 @@
     "lint:scripts": "eslint .",
     "lint": "pnpm lint:scripts --fix && pnpm lint:prettier",
     "preinstall": "npx only-allow pnpm",
-    "prepare": "cd .. && husky install TypeScript/.husky",
+    "prepare": "cd .. && husky TypeScript/.husky",
     "start": "tsx test/text-test-fixture.ts",
     "test:coverage": "pnpm test run --coverage",
     "test": "vitest"
