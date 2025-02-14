@@ -1,5 +1,5 @@
-import { Item } from "../src/item";
 import { GildedTros } from "../src/gilded-tros";
+import { Item } from "../src/item";
 
 describe("GildedTrosTest", () => {
   const items: Item[] = [new Item("foo", 0, 0)];
