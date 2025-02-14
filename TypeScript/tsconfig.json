@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "commonjs",
+    "module": "esnext",
     "sourceMap": false,
     "outDir": "./dist",
     "rootDir": "./",
@@ -12,7 +12,10 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
-  "include": ["**/src", "test/**.spec.ts", "test/text-test-fixture.ts"]
+  "include": ["src/**/*.ts"]
 }
