@@ -1,7 +1,7 @@
 {
   "name": "gildedtros",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.ts",
   "scripts": {
     "build": "tsc",
     "lint:prettier": "prettier --ignore-path .prettierignore --ignore-path ../.gitignore . --write",
@@ -9,7 +9,7 @@
     "lint": "pnpm lint:scripts --fix && pnpm lint:prettier",
     "preinstall": "npx only-allow pnpm",
     "prepare": "cd .. && husky TypeScript/.husky",
-    "start": "tsx test/text-test-fixture.ts",
+    "start": "tsx src/index.ts",
     "test:coverage": "pnpm test run --coverage",
     "test": "vitest"
   },
