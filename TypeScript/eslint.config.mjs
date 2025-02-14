@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { includeIgnoreFile } from "@eslint/compat";
 import pluginJs from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
@@ -16,6 +17,11 @@ export default [
   includeIgnoreFile(gitignorePath),
   { files: ["**/*.{js,mjs,cjs,ts}"] },
   { languageOptions: { globals: globals.browser } },
+  {
+    plugins: {
+      "simple-import-sort": simpleImportSort,
+    },
+  },
   /*
    * Recommended configuration for the @eslint/js plugin.
    */
